@@ -73,10 +73,10 @@ const About = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button variant="outline" className="group border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              {/* <Button variant="outline" className="group border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 View My Work
                 <ArrowUpRight className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={16} />
-              </Button>
+              </Button> */}
               <Button variant="ghost" className="text-muted-foreground hover:text-primary" asChild>
                 <a href="https://drive.google.com/uc?export=download&id=16yqgt0dvAZrcc9jQqdT0LvKPwGJ_pVEf">
                   Download Resume

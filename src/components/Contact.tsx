@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Coffee } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -14,11 +14,11 @@ const contactInfo = [
     title: 'My Location',
     lines: ['Prabhadevi', 'Mumbai – 400 025'],
   },
-  {
-    icon: Phone,
-    title: 'Phone Number',
-    lines: ['+91 9833313287'],
-  },
+  // {
+  //   icon: Phone,
+  //   title: 'Phone Number',
+  //   lines: ['+91 9833313287'],
+  // },
   {
     icon: Mail,
     title: 'Email Address',
@@ -123,6 +123,29 @@ const Contact = () => {
                   </motion.div>
                 ))}
               </div>
+                {/* Buy Me a Coffee */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.4, delay: 0.6 }}
+  className="mt-6"
+>
+  <h4 className="font-semibold text-foreground mb-2">Buy Me a Coffee</h4>
+
+  <Button
+    size="lg"
+    className="gradient-bg text-primary-foreground hover:opacity-90 transition-opacity"
+    onClick={() =>
+      window.open(
+        "upi://pay?pa=sprathamesh2611-1@okicici&pn=Prathamesh&cu=INR",
+        "_blank"
+      )
+    }
+  >
+    Support My Work
+    <Coffee className="ml-2" size={18} />
+  </Button>
+</motion.div>
             </div>
           </motion.div>
 
