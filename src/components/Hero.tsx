@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Database, ArrowLeftRight, BarChart3, Linkedin, Github, Facebook, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import heroImage from '@/assets/hero-profile.jpg';
+import heroImage from '@/assets/hero-profile.jpeg';
 
 const typedItems = ['Data Analyst', 'Power BI', 'SQL', 'Python'];
 

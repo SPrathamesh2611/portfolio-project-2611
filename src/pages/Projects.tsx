@@ -6,54 +6,55 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 
 
-const skillTags = ['All', 'Python', 'SQL', 'Power BI', 'ETL', 'NoSQL', 'test'];
+const skillTags = ['All', 'Professional Projects', 'SQL', 'Power BI', 'Python', 'ETL', 'Data Analysis', 'AI-Assisted'];
+
 
 const projects = [
   {
-    title: 'Sales Dashboard',
-    description: 'Interactive Power BI dashboard analyzing sales performance across regions with dynamic filters and drill-through reports.',
-    tags: ['Power BI', 'SQL'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    title: 'Credit Bureau Data Automation',
+    description: 'Built a Python–SQL automation pipeline at Svasti Microfinance for Credit Bureau submissions (CIBIL, Equifax, Highmark), cutting processing time from 1.5 hours to ~35 minutes and raising success rate to 99.96%.',
+    tags: ['Professional Projects', 'SQL', 'Python', 'Data Analysis'],
+    image: '/projects/credit-bureau-data-automation.png',
+    github: 'https://github.com/SPrathamesh2611/CB-Data-Export-Automation',
+    demo: '#',
+  },
+  {
+    title: 'Hospital ETL & Data Quality Pipeline',
+    description: 'Designed an enterprise-style hospital ETL pipeline with RAW-to-CLEAN data flow, validation error tracking, and reconciliation dashboards using SQL Server, Python, and Apache Hop.',
+    tags: ['Python', 'SQL' , 'ETL'],
+    image: '/projects/hospital-etl.png',
+    github: 'https://github.com/SPrathamesh2611/HEALTHSPHERE-DATA-HUB',
+    demo: '#',
+  },
+  {
+    title: 'Portfolio Website',
+    description: 'Built a responsive personal portfolio using React and Tailwind CSS with AI-assisted development. Showcases professional projects, skills, and data analytics work through an interactive and modern UI.',
+    tags: ['Professional Projects', 'AI-Assisted'],
+    image: '/projects/portfolio.png',
+    github: 'https://github.com/SPrathamesh2611/portfolio-project-2611',
+    demo: '#',
+  },
+  {
+    title: 'Fitness Trainer Portfolio',
+    description: 'Built a responsive fitness trainer portfolio using React and Tailwind CSS with AI-assisted development. The website highlights personal training services, fitness programs, and client transformation results through a modern and interactive UI.',
+    tags: ['Professional Projects', 'AI-Assisted'],
+    image: '/projects/swap.png',
     github: '#',
     demo: '#',
   },
   {
-    title: 'Customer Churn Analysis',
-    description: 'Predictive analysis using Python and machine learning to identify customers likely to churn, with actionable retention strategies.',
-    tags: ['Python', 'SQL'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-    github: '#',
+    title: 'SpaceX Shop Clone',
+    description: 'Built an e-commerce clone of the SpaceX store during QSpiders training using Django and Bootstrap. Implemented product pages, user authentication, and a database-connected shopping cart system.',
+    tags: ['Python', 'Django', 'HTML/CSS', 'Bootstrap'],
+    image: '/projects/spacex.png',
+    github: 'https://github.com/SPrathamesh2611/SpaceX_Shopping',
     demo: '#',
   },
   {
-    title: 'ETL Data Pipeline',
-    description: 'Automated ETL pipeline using Apache Hop to transform and load data from multiple sources into a centralized data warehouse.',
-    tags: ['ETL', 'SQL'],
-    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'MongoDB Analytics Platform',
-    description: 'NoSQL-based analytics solution for processing and visualizing unstructured data from various business sources.',
-    tags: ['NoSQL', 'Python'],
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'Financial Reporting Automation',
-    description: 'Automated SQL-based reporting system generating weekly and monthly financial summaries with scheduled delivery.',
-    tags: ['SQL', 'Power BI'],
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'Web Scraping & Data Collection',
-    description: 'Python scripts for scraping, cleaning, and storing web data for market research and competitive analysis.',
-    tags: ['Python', 'NoSQL'],
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop',
+    title: 'Churn & Loan Prediction',
+    description: 'Built predictive models to analyze customer churn and loan status using Python and machine learning. Cleaned and merged datasets, trained models, and developed an interactive Power BI dashboard to visualize customer behavior and business insights.',
+    tags: ['Python', 'Power BI', 'Data Analysis'],
+    image: '/projects/churn.png',
     github: '#',
     demo: '#',
   },
@@ -149,13 +150,29 @@ const Projects = () => {
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" variant="secondary" className="gap-1">
+                          <Github size={14} /> Code
+                        </Button>
+                      </a>
+
+                      {/* <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" className="gap-1 gradient-bg text-primary-foreground">
+                          <ExternalLink size={14} /> Demo
+                        </Button>
+                      </a> */}
+
+                    </div>
                   </div>
 
                   <div className="p-5">
                     <h3 className="text-lg font-semibold text-foreground mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-5">
                       {project.description}
                     </p>
 
