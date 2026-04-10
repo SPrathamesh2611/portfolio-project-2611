@@ -39,7 +39,7 @@ const projects = [
     description: 'Built a responsive fitness trainer portfolio using React and Tailwind CSS with AI-assisted development. The website highlights personal training services, fitness programs, and client transformation results through a modern and interactive UI.',
     tags: ['Professional Projects', 'AI-Assisted'],
     image: '/projects/swap.png',
-    github: '#',
+    github: 'https://github.com/SPrathamesh2611/Fitness-Trainer-Portfolio',
     demo: '#',
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     description: 'Built predictive models to analyze customer churn and loan status using Python and machine learning. Cleaned and merged datasets, trained models, and developed an interactive Power BI dashboard to visualize customer behavior and business insights.',
     tags: ['Python', 'Power BI', 'Data Analysis'],
     image: '/projects/churn.png',
-    github: '#',
+    github: 'https://github.com/SPrathamesh2611/Churn-Loan-Prediction-Project',
     demo: '#',
   },
 ];
