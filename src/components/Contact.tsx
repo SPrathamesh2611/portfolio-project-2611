@@ -41,37 +41,49 @@ const Contact = () => {
   // const handleSubmit = async (e: React.FormEvent) => {
   //   e.preventDefault();
   //   setIsSubmitting(true);
-    
+
   //   // Simulate form submission
   //   await new Promise((resolve) => setTimeout(resolve, 1000));
 
+  const [showQR, setShowQR] = useState(false);
+  const handleCoffeeClick = () => {
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      window.location.href =
+        "upi://pay?pa=sprathamesh2611-1@okicici&pn=Prathamesh&cu=INR";
+    } else {
+      setShowQR(true);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    await emailjs.send(
-      "service_irnbu2a",
-      "template_zs31fwa",
-      formData,
-      "ghhhFeuXKdWypyrTM"
-    );
+    try {
+      await emailjs.send(
+        "service_irnbu2a",
+        "template_zs31fwa",
+        formData,
+        "ghhhFeuXKdWypyrTM"
+      );
 
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
 
-    setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
 
-  } catch (error) {
-    toast({
-      title: "Error",
-      description: "Failed to send message.",
-    });
-  }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message.",
+      });
+    }
 
-  setIsSubmitting(false);
+    setIsSubmitting(false);
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -101,7 +113,7 @@ const Contact = () => {
           >
             <div className="bg-card rounded-2xl p-8 card-shadow border border-border/50 h-full">
               <h3 className="text-xl font-bold text-foreground mb-8">Contact Info</h3>
-              
+
               <div className="space-y-8">
                 {contactInfo.map((item, index) => (
                   <motion.div
@@ -123,29 +135,52 @@ const Contact = () => {
                   </motion.div>
                 ))}
               </div>
-                {/* Buy Me a Coffee */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={isInView ? { opacity: 1, y: 0 } : {}}
-  transition={{ duration: 0.4, delay: 0.6 }}
-  className="mt-6"
->
-  <h4 className="font-semibold text-foreground mb-2">Buy Me a Coffee</h4>
+              {/* Buy Me a Coffee */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                className="mt-6"
+              >
+                <h4 className="font-semibold text-foreground mb-2">Buy Me a Coffee</h4>
 
-  <Button
-    size="lg"
-    className="gradient-bg text-primary-foreground hover:opacity-90 transition-opacity"
-    onClick={() =>
-      window.open(
-        "upi://pay?pa=sprathamesh2611-1@okicici&pn=Prathamesh&cu=INR",
-        "_blank"
-      )
-    }
-  >
-    Support My Work
-    <Coffee className="ml-2" size={18} />
-  </Button>
-</motion.div>
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto gradient-bg text-primary-foreground hover:opacity-90"
+                  onClick={handleCoffeeClick}
+                >
+                  Support My Work
+                  <Coffee className="ml-2" size={18} />
+                </Button>
+                {showQR && (
+                  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-xl p-6 text-center max-w-sm">
+
+                      <h3 className="text-lg font-semibold mb-4">
+                        Scan to Support ☕
+                      </h3>
+
+                      <img
+                        src="/upi-qr.jpeg"
+                        alt="UPI QR"
+                        className="mx-auto mb-4"
+                      />
+
+                      <p className="text-sm text-gray-600 mb-4">
+                        Scan this QR with GPay / PhonePe
+                      </p>
+
+                      <Button
+                        onClick={() => setShowQR(false)}
+                        className="gradient-bg text-white"
+                      >
+                        Close
+                      </Button>
+
+                    </div>
+                  </div>
+                )}
+              </motion.div>
             </div>
           </motion.div>
 
@@ -158,7 +193,7 @@ const Contact = () => {
           >
             <div className="bg-card rounded-2xl p-8 card-shadow border border-border/50">
               <h3 className="text-xl font-bold text-foreground mb-8">Get In Touch</h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <Input

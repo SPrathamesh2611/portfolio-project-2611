@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 
-const skillTags = ['All', 'Python', 'SQL', 'Power BI', 'ETL', 'NoSQL'];
+
+const skillTags = ['All', 'Python', 'SQL', 'Power BI', 'ETL', 'NoSQL', 'test'];
 
 const projects = [
   {
@@ -58,12 +59,24 @@ const projects = [
   },
 ];
 
+const ComingSoonCard = ({ tag }) => (
+  <div className="bg-card rounded-xl overflow-hidden border border-border card-shadow flex flex-col items-center justify-center h-full min-h-[320px] text-center p-6">
+    <h3 className="text-lg font-semibold text-foreground mb-2">
+      Coming Soon
+    </h3>
+    <p className="text-sm text-muted-foreground">
+      Projects under <span className="font-medium text-primary">{tag}</span> are in progress.
+    </p>
+  </div>
+);
+
 const Projects = () => {
   const [activeTag, setActiveTag] = useState('All');
 
   const filteredProjects = activeTag === 'All'
     ? projects
     : projects.filter((p) => p.tags.includes(activeTag));
+  const hasProjects = filteredProjects.length > 0;
 
   return (
     <div className="min-h-screen bg-background">
@@ -118,48 +131,54 @@ const Projects = () => {
         {/* Project Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {hasProjects ? (
+              filteredProjects.map((project) => (
+                <motion.div
+                  key={project.title}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-card rounded-xl overflow-hidden border border-border card-shadow group"
+                >
+                  {/* existing card code unchanged */}
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))
+            ) : (
               <motion.div
-                key={project.title}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                key="coming-soon"
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="bg-card rounded-xl overflow-hidden border border-border card-shadow group"
+                className="col-span-full flex justify-center"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="secondary" className="gap-1">
-                        <Github size={14} /> Code
-                      </Button>
-                    </a>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" className="gap-1 gradient-bg text-primary-foreground">
-                        <ExternalLink size={14} /> Demo
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
+                <ComingSoonCard tag={activeTag} />
               </motion.div>
-            ))}
+            )}
           </AnimatePresence>
         </div>
       </div>
