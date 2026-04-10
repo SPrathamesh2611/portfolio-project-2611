@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowUpRight, Download, Sparkles, Headphones, Settings, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profileImage from '@/assets/about-profile.jpg';
+import profileImage from '@/assets/about-profile.jpeg';
 
 const timeline = [
   {
@@ -78,7 +78,7 @@ const About = () => {
                 <ArrowUpRight className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={16} />
               </Button> */}
               <Button variant="ghost" className="text-muted-foreground hover:text-primary" asChild>
-                <a href="https://drive.google.com/uc?export=download&id=16yqgt0dvAZrcc9jQqdT0LvKPwGJ_pVEf">
+                <a href="https://drive.google.com/uc?export=download&id=1UOOog-v5Td6SPUH48cqNW728lNz57DFc">
                   Download Resume
                   <Download className="ml-2" size={16} />
                 </a>

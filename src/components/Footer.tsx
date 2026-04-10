@@ -3,7 +3,7 @@ import { Linkedin, Github, Facebook, Instagram } from 'lucide-react';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/prathamesh-surve-4323301a0/', label: 'LinkedIn' },
-  { icon: Github, href: '#', label: 'GitHub' },
+  { icon: Github, href: 'https://github.com/SPrathamesh2611?tab=repositories', label: 'GitHub' },
   { icon: Facebook, href: 'https://m.facebook.com/prathamesh.p.surve/', label: 'Facebook' },
   { icon: Instagram, href: 'https://www.instagram.com/', label: 'Instagram' },
 ];

@@ -9,7 +9,7 @@ const typedItems = ['Data Analyst', 'Power BI', 'SQL', 'Python'];
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/prathamesh-surve-4323301a0/' },
-  { icon: Github, href: '#' },
+  { icon: Github, href: 'https://github.com/SPrathamesh2611?tab=repositories' },
   { icon: Facebook, href: 'https://m.facebook.com/prathamesh.p.surve/' },
   { icon: Instagram, href: 'https://www.instagram.com/' },
 ];
