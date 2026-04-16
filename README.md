@@ -1,73 +1,178 @@
-# Welcome to your Lovable project
+# 🚀 Prathamesh Surve – Data Analyst Portfolio Website
 
-## Project info
+A modern **portfolio website built to showcase my Data Analyst, Business Analyst, and BI project experience** with a strong focus on **SQL, Power BI, Python, ETL, and business storytelling**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This portfolio highlights real-world projects across **BFSI, healthcare, automation, reporting, and data quality**, designed to attract recruiters for **Data Analyst, Business Analyst, BI Engineer, and Reporting Analyst roles**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌐 Live Demo
 
-**Use Lovable**
+> Deployed link here 
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**Portfolio Link:** `https://pratham-portfolio2611.netlify.app/`
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 📌 Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* 🎯 Clean and recruiter-friendly UI
+* 📊 Dedicated analytics project showcase
+* 🧠 Skills section with proficiency levels
+* 💼 Career journey timeline
+* 📬 Contact form integration with EmailJS
+* 📱 Fully responsive for desktop and mobile
+* ⚡ Fast React + Vite performance
+* 🎨 Modern animations and smooth navigation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠️ Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* **Frontend:** React.js, TypeScript, Vite
+* **Styling:** Tailwind CSS, CSS Animations
+* **Deployment:** Vercel / Netlify
+* **Contact Integration:** EmailJS
+* **Version Control:** GitHub
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 💼 Highlight Projects
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 1) Credit Bureau Automation & Reporting
+
+Built an enterprise-style automation and reporting solution focused on:
+
+* SQL data extraction
+* business rule validation
+* automated reporting workflows
+* decision support dashboards
+* operational efficiency improvements
+
+**Tools Used:** SQL, Power BI, Python
+
+---
+
+### 2) Hospital Data Lake ETL & Data Quality Framework
+
+Designed a healthcare data integration solution that consolidates customer and operational data into a centralized warehouse.
+
+Key outcomes:
+
+* ETL pipeline design
+* data validation framework
+* reconciliation checks
+* reporting layer for business insights
+* Power BI visualization
+
+**Tools Used:** Apache Hop, SQL, Power BI, Python
+
+---
+
+### 3) Customer Churn & Loan Prediction
+
+A machine learning + business analytics project to identify:
+
+* churn risk customers
+* loan approval probability
+* customer retention strategies
+* cross-sell opportunities
+
+**Tools Used:** Python, SQL, Power BI, Machine Learning
+
+---
+
+## 📷 Portfolio Preview
+
+> Add screenshots here
+
+* Home Page
+* About Section
+* Projects Showcase
+* Contact Page
+
+---
+
+## 📂 Folder Structure
+
+```bash
+portfolio/
+│── public/
+│── src/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   └── styles/
+│── package.json
+│── vite.config.ts
+│── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/portfolio.git
+```
+
+Go to project folder:
+
+```bash
+cd portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📈 Career Focus
 
-**Use GitHub Codespaces**
+This portfolio is designed to target opportunities in:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* Data Analyst
+* Business Analyst
+* BI Engineer
+* Reporting Analyst
+* Product Analyst
+* ETL / Data Quality Analyst
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 👨‍💻 About Me
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+I’m **Prathamesh Surve**, a Data Analyst-focused professional with experience in:
 
-## How can I deploy this project?
+* SQL
+* Python
+* Power BI
+* ETL pipelines
+* Business reporting
+* data validation
+* dashboard automation
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Currently building enterprise-level analytics projects to transition into **high-growth DA/BA roles (8–12 LPA target)**.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## ⭐ Support
+
+If you liked this portfolio project, give it a **star ⭐ on GitHub**.
+
+It helps improve visibility with recruiters and the developer community.
